@@ -1,0 +1,60 @@
+10. Jenkins Master & Agent 
+Step 1: Prepare (Terminal)
+Bash
+
+# Install Java (if not already)
+sudo apt update && sudo apt install default-jdk -y
+
+# Create Agent Directory (use your username)
+mkdir -p /home/ubuntu/jenkins-agent-work
+Step 2: Configure Jenkins (Web UI)
+Go to Manage Jenkins → Nodes → New Node.
+
+Name: local-agent.
+
+Select Permanent Agent. Click Create.
+
+Remote root directory: /home/ubuntu/jenkins-agent-work.
+
+Labels: local-agent.
+
+Launch method: Launch agent via execution of command on the controller.
+
+Save.
+
+Step 3: Launch Agent (Web UI)
+Go to Manage Jenkins → Nodes.
+
+Click local-agent.
+
+Click Launch agent.
+
+(Wait a few seconds, refresh Nodes page to see connection).
+
+Step 4: Create & Run Test Job (Web UI)
+Go to Dashboard → New Item.
+
+Name: LocalAgentTest, select Freestyle project, click OK.
+
+General Tab:
+
+Check Restrict where this project can be run.
+
+Label Expression: local-agent.
+
+Build Steps Tab:
+
+Add build step → Execute shell.
+
+Command: echo "Hello from Local Agent!".
+
+Apply → Save.
+
+Build Now.
+
+Step 5: Verify (Web UI)
+Go to Build History → #1 → Console Output.
+
+Look for Running on local-agent... and Hello from Local Agent!.
+
+Look for Finished: SUCCESS.

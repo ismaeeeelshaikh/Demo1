@@ -1,0 +1,33 @@
+JENKINS Install on aws instance 
+
+1. create instance  → ubuntu → t2.micro → key pair create → network setting(enable all)
+
+2. connect instance → ec2 instance 
+
+3. terminal
+# sudo apt update
+# sudo apt install openjdk-11-jdk -y
+# java —version 
+
+4. go to pkg.jenkins.io 
+debian stable
+
+run commands (1,2,3)
+https://pkg.jenkins.io/debian-stable
+
+2nd part
+
+1.instance
+#sudo systemctl start jenkins
+#sudo systemctl enable jenkins
+#sudo systemctl status jenkins
+
+2. security → edit inbound rules → port 8080 → save rules
+
+3. browser → http://Ipv4:8080
+
+4. for pass → copy that path on web → then go to terminal on instance → write command → sudo cat <path> 
+
+5. install suggested plugins
+
+6. fill details → next → start using jenkins
