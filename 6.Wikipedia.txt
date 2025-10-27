@@ -22,6 +22,16 @@ Bash
 pip3 install selenium
 (If you run these, you will not get the ModuleNotFoundError)
 
+if unable to download selenium from above command use this
+
+1. sudo apt install python3.12-venv
+
+2. python3 -m venv venv
+
+3. source venv/bin/activate
+
+4. pip3 install selenium
+
 Open VScode
 
 from selenium import webdriver
