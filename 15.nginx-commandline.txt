@@ -20,8 +20,34 @@ cd /usr/share/nginx/html/
 # Backup default page
 mv index.html index.html_backup
 
-# Create new page
+# Create new panano index.htmlge
 nano index.html
+
+code:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Alok's Server!</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            display: grid; 
+            place-items: center; 
+            min-height: 90vh; 
+            background-color: #f4f4f4; 
+        }
+        h1 { 
+            color: #333; 
+            border-bottom: 2px solid #0096d6; 
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello from my custom Nginx container!</h1>
+</body>
+</html>
 
 Save & Exit: Ctrl+O, Enter, Ctrl+X.
 
