@@ -8,7 +8,7 @@ Step 2: Run Container Interactively
 This gives you a shell inside the container and maps port 5555.
 
 Bash
-docker run -it -p 5555:80 --name server_Alok nginx:latest bash
+docker run -it -p 5555:80 --name server_ismaeel nginx:latest bash
 
 Step 3: Inside Container - Modify Webpage
 You are now root inside the container.
@@ -28,7 +28,7 @@ code:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Alok's Server!</title>
+    <title>Welcome to ismaeel's Server!</title>
     <style>
         body { 
             font-family: Arial, sans-serif; 
